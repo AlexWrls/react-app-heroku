@@ -4,9 +4,9 @@ const Main = () => {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
-    const createFetch=()=>{
+
         useEffect(() => {
-            fetch('/https://simple-react-back.herokuapp.com/main')
+            fetch('/main')
                 .then((res) => res.json())
                 .then(
                     (data) => {
@@ -20,13 +20,13 @@ const Main = () => {
                     }
                 );
         }, []);
-    }
+
     if (isLoading) {
         return <h1>Loading data... </h1>;
     } else {
         return (
             <div className="card">
-                <button onClick={createFetch} className="btn-sm btn-primary">create</button>
+
                 <div className="card-body">
                     <table className="table table-hover">
                         <thead>
